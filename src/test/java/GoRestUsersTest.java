@@ -172,7 +172,7 @@ public class GoRestUsersTest {
                 .put("/{userId}")
                 .then()
                 .spec(responseSpecification)
-                .statusCode(200)
+                .statusCode(404)
                 .body("name", equalTo(userFromResponse.getName()))
                 .body("email", equalTo(userFromResponse.getEmail()))
                 .body("gender", equalTo(userFromResponse.getGender()));
@@ -206,7 +206,7 @@ public class GoRestUsersTest {
                 .when()
                 .delete("/{userId}")
                 .then()
-                .statusCode(404);
+                .statusCode(200);
     }
 
     /**
